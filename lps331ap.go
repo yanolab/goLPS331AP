@@ -46,7 +46,7 @@ func (l *LPS331AP) ReadPressure() (float32, error) {
 	return float32(int(buf[2])<<16|int(buf[1])<<8|int(buf[0])) / 4096.0, nil
 }
 
-func (l *LPS331AP) ReadTemp() (float32, error) {
+func (l *LPS331AP) ReadTemperature() (float32, error) {
 	buf := make([]byte, 2)
 
 	for idx := 0x2b; idx <= 0x2c; idx++ {
